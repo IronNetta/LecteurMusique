@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="be.seba.testapk.lecteurmulti.MainActivity">
+
+    <Button
+        android:id="@+id/btn_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Playlist" />
+
+    <ToggleButton
+        android:id="@+id/tb_love"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/space16"
+        android:textOff=""
+        android:textOn=""
+        android:button="@drawable/toggle_button"
+        android:background="@null" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/space16"
+        android:weightSum="5">
+
+        <ImageButton
+            android:id="@+id/ic_repeat"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_repeat"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/ic_backward"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_backward"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/ic_play"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_play"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/ic_forward"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_forward"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/ic_shuffle"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_shuffle"
+            android:background="@null" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_bottom"
+        android:layout_margin="@dimen/space16">
+
+        <TextView
+            android:id="@+id/tv_current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/colorTextGrey" />
+
+        <TextView
+            android:id="@+id/tv_full_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/colorTextGrey" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            style="?android:attr/progressBarStyleHorizontal" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_progress"
+        android:layout_centerHorizontal="true"
+        android:text="by From First to Last "
+        android:textSize="14sp"
+        android:textColor="@color/colorTextGrey" />
+
+    <TextView
+        android:id="@+id/tv_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_artist"
+        android:layout_marginBottom="@dimen/space8"
+        android:layout_centerHorizontal="true"
+        android:text="Make War"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextDark" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.cardview.widget.CardView>
+
+    <me.crosswall.lib.coverflow.core.PagerContainer
+        android:id="@+id/pager_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tv_song"
+        android:layout_below="@id/tb_love"
+        android:layout_marginTop="@dimen/space16"
+        android:layout_marginBottom="@dimen/space16">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center" >
+
+            <be.seba.testapk.lecteurmulti.SquareImageView
+                android:id="@+id/imageCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </androidx.viewpager.widget.ViewPager>
+    </me.crosswall.lib.coverflow.core.PagerContainer>
+</RelativeLayout>
+

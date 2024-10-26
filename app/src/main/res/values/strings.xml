@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Music Player</string>
+    <string name="no_audio_selected">No audio selected</string>
+    <string name="no_songs_in_playlist">No songs in playlist</string>
+    <string name="audio_playback_error">Error during audio playback</string>
+    <string name="permission_denied_message">Permission denied</string>
+    <string name="metadata_retrieval_error">Erreur lors de la récupération des métadonnées.</string>
+    <string name="invalid_audio_uri">URI audio invalide.</string>
+</resources>
